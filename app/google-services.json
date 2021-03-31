@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "148849195223",
+    "project_id": "hymn-b94a6",
+    "storage_bucket": "hymn-b94a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148849195223:android:df1494b652c280f2865892",
+        "android_client_info": {
+          "package_name": "com.example.hymn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "148849195223-osardicf6p4o96vnuvfuv6u1q139u5d3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiTRrblmKYB8rajIvMbkcXnONHRlPu0yw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "148849195223-osardicf6p4o96vnuvfuv6u1q139u5d3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
