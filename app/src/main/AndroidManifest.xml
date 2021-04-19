@@ -9,10 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hymn">
-        <activity android:name=".activities.LoginActivity"
+        <activity android:name=".activities.ForgotPasswordActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Hymn.NoActionBar">
         </activity>
+        <activity android:name=".activities.BaseActivity" />
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Hymn.NoActionBar" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Hymn.NoActionBar" />
         <activity
             android:name=".activities.SplashActivity"
             android:screenOrientation="portrait"
@@ -23,8 +32,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MainActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activities.MainActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

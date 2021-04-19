@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--These dimensions will be used throughout the app-->
+    <!--Splash screen title size-->
     <dimen name="splash_title_text_size">35sp</dimen>
 
     <dimen name="button_background_radius">10dp</dimen>
 
+    <!--for login-->
     <dimen name="auth_header_image_height">200dp</dimen>
     <dimen name="auth_logo_width_size">220dp</dimen>
     <dimen name="auth_logo_height_size">100dp</dimen>
@@ -15,4 +18,21 @@
     <dimen name="btn_textSize">18sp</dimen>
     <dimen name="btn_padding">8dp</dimen>
     <dimen name="lbl_text_view_textSize">16sp</dimen>
+
+    <!--Register activity-->
+    <dimen name="toolbar_title_paddingStart">-25dp</dimen>
+    <dimen name="toolbar_title_text_size">18sp</dimen>
+    <dimen name="txt_terms_condition_marginStart">10dp</dimen>
+    <dimen name="txt_terms_and_condition_textSize">14sp</dimen>
+    <dimen name="button_paddingTop_Bottom">8dp</dimen>
+
+    <!--Progress bar dimensions-->
+    <dimen name="progress_dialog_content_padding">10dp</dimen>
+    <dimen name="progress_bar_size">50dp</dimen>
+    <dimen name="progress_text_marginStart">16dp</dimen>
+    <dimen name="progress_text_size">16sp</dimen>
+
+    <!--Forgot password activity dimensions-->
+    <dimen name="forgot_password_title_textSize">18sp</dimen>
+    <dimen name="forgot_password_title_description_textSize">14sp</dimen>
 </resources>

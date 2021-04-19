@@ -7,6 +7,7 @@
     tools:context=".activities.LoginActivity"
     android:background="@color/white">
 
+    <!--Frame layout for our screen-->
     <FrameLayout
         android:id="@+id/fl_header_image"
         android:layout_width="wrap_content"
@@ -15,6 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <!--ImageView for our pink background-->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -22,6 +24,7 @@
             android:scaleType="fitXY"
             android:src="@drawable/auth_screens_background" />
 
+        <!--logo attributes-->
         <ImageView
             android:layout_width="@dimen/auth_logo_width_size"
             android:layout_height="@dimen/auth_logo_height_size"
@@ -33,6 +36,7 @@
             />
         </FrameLayout>
 
+    <!--Login text view-->
     <com.example.hymn.utils.HymnTextViewBold
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
@@ -45,6 +49,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fl_header_image" />
 
+    <!--email text input-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_email"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -59,7 +64,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title">
 
-    <com.example.hymn.utils.HymnEditText
+        <!--Editable text for email-->
+        <com.example.hymn.utils.HymnEditText
         android:id="@+id/et_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -70,6 +76,7 @@
         tools:text="abc@gmail.com" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!--Text input for password-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_password"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -84,7 +91,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/til_email">
 
-    <com.example.hymn.utils.HymnEditText
+        <!--editable text password-->
+        <com.example.hymn.utils.HymnEditText
         android:id="@+id/et_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -95,6 +103,7 @@
         tools:text="123456" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!--Text view for forgot password-->
     <com.example.hymn.utils.HymnTextView
         android:id="@+id/tv_forgot_password"
         android:layout_width="wrap_content"
@@ -108,6 +117,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/til_password" />
 
+    <!--Button for login-->
     <com.example.hymn.utils.HymnButton
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
@@ -128,6 +138,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_forgot_password" />
 
+    <!--Linear layout for dont have an account-->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
