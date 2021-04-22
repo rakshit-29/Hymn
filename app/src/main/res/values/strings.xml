@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Hymn</string>
 
-    <!--Login page-->
+    <!--Login page UI-->
     <string name="content_description">image</string>
     <string name="title_login">LOGIN</string>
     <string name="et_hint_email_id">Email ID</string>
@@ -13,18 +13,18 @@
 
     <string name="create_an_account">CREATE AN ACCOUNT</string>
 
-    <!--register-->
+    <!--Register UI-->
     <string name="hint_last_name">Last name</string>
     <string name="hint_first_name">First name</string>
     <string name="et_hint_confirm_password">Confirm Password</string>
 
-    <string name="i_agree_to_the_terms_and_condition">I Agree To The <u> Terms &amp; Condition </u></string>
+    <string name="i_agree_to_the_terms_and_condition">I Agree To The <u>Terms &amp; Conditions </u></string>
     <string name="btn_lbl_register">Register</string>
 
     <string name="already_have_an_account">Already have an account?</string>
     <string name="login"><u>Login</u></string>
 
-    <!--Register-->
+    <!--Register activity-->
     <string name="err_msg_enter_first_name">Please enter first name.</string>
     <string name="err_msg_enter_last_name">Please enter last name.</string>
     <string name="err_msg_enter_email">Please enter email.</string>
@@ -43,4 +43,18 @@
 
     <!--Email sent-->
     <string name="email_sent_success">\"Email sent successfully to reset password!\"</string>
+
+    <string name="register_success">You are registered successfully!</string>
+
+    <!--User profile UI-->
+    <string name="title_complete_profile">USER PROFILE</string>
+    <string name="et_hint_mobile_number">Mobile Number</string>
+    <string name="rb_lbl_male">MALE</string>
+    <string name="rb_lbl_female">FEMALE</string>
+    <string name="btn_lbl_save">Save</string>
+    <string name="read_storage_permission_denied">Oops, you just denied the permission for storage. You can also allow it from the settings.</string>
+    <string name="image_selection_failed">Image Selection Failed!</string>
+    <string name="err_msg_enter_mobile_number">Please enter your mobile number.</string>
+    <string name="msg_profile_update_success">Your profile is updated successfully!</string>
+
 </resources>

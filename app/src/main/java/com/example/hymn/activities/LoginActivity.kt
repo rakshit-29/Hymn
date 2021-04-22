@@ -4,9 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import com.example.hymn.R
+import com.example.hymn.firestore.FirestoreClass
+import com.example.hymn.models.User
+import com.example.hymn.utils.Constants
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -33,6 +37,31 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
         // Click event assigned to Register text.
         tv_register.setOnClickListener(this)
 
+    }
+    /**
+     * A function to notify user that logged in success and get the user details from the FireStore database after authentication.
+     */
+    fun userLoggedInSuccess(user: User) {
+
+        // Hide the progress dialog.
+        hideProgressDialog()
+
+        // Print the user details in the log as of now.
+        Log.i("First Name: ", user.firstName)
+        Log.i("Last Name: ", user.lastName)
+        Log.i("Email: ", user.email)
+
+        if (user.profileCompleted == 0) {
+            // If the user profile is incomplete then launch the UserProfileActivity.
+            val intent = Intent(this@LoginActivity, UserProfileActivity::class.java)
+            intent.putExtra(Constants.EXTRA_USER_DETAILS, user)
+            startActivity(intent)
+        } else {
+            // Redirect the user to Main Screen after log in.
+            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+        }
+
+        finish()
     }
     // In Login screen the clickable components are Login Button, ForgotPassword text and Register Text.
     override fun onClick(v: View?) {
@@ -92,12 +121,12 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
             //Log-In using FirebaseAuth
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task->
-                    hideProgressDialog()
-                    //TODO- Send user to Main Activity
+
                     if(task.isSuccessful){
-                        showErrorSnackBar("You are logged in successfully!", false)
+                        FirestoreClass().getUserDetails(this@LoginActivity)
 
                     }else {
+                        hideProgressDialog()
                         showErrorSnackBar(task.exception!!.message.toString(), true)
                     }
                 }
