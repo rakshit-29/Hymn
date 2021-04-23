@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hymn">
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,24 +12,43 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hymn">
         <activity
-            android:name=".activities.UserProfileActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.Hymn.NoActionBar"/>
-        <activity
-            android:name=".activities.ForgotPasswordActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.Hymn.NoActionBar" />
-        <activity android:name=".activities.BaseActivity" />
-        <activity
-            android:name=".activities.RegisterActivity"
+            android:name=".userinterface.activities.CartListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Hymn.NoActionBar" />
         <activity
-            android:name=".activities.LoginActivity"
+            android:name=".userinterface.activities.ProductDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Hymn.NoActionBar" />
         <activity
-            android:name=".activities.SplashActivity"
+            android:name=".userinterface.activities.AddProductActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Hymn.NoActionBar" />
+        <activity
+            android:name=".userinterface.activities.SettingsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Hymn.NoActionBar" />
+        <activity
+            android:name=".userinterface.activities.DashboardActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".userinterface.activities.UserProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Hymn.NoActionBar" />
+        <activity
+            android:name=".userinterface.activities.ForgotPasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Hymn.NoActionBar" />
+        <activity android:name=".userinterface.activities.BaseActivity" />
+        <activity
+            android:name=".userinterface.activities.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Hymn.NoActionBar" />
+        <activity
+            android:name=".userinterface.activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Hymn.NoActionBar" />
+        <activity
+            android:name=".userinterface.activities.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Hymn.NoActionBar">
             <intent-filter>
@@ -38,7 +58,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".userinterface.activities.MainActivity"
             android:screenOrientation="portrait" />
     </application>
 

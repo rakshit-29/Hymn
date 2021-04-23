@@ -1,4 +1,4 @@
-package com.example.hymn.activities
+package com.example.hymn.userinterface.activities
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity

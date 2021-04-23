@@ -1,7 +1,6 @@
-package com.example.hymn.activities
+package com.example.hymn.userinterface.activities
 
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -26,7 +25,7 @@ class SplashActivity : AppCompatActivity() {
         Handler().postDelayed(
                 {
                     // Launch the Main Activity
-                    startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+                    startActivity(Intent(this@SplashActivity, DashboardActivity::class.java))
                     finish() // Call this when your activity is done and should be closed.
                 },
                 2500
