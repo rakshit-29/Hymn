@@ -19,6 +19,11 @@ I have used my own coded utilities for creating editable text field, buttons, ra
 
 For working with images, I have used GlideLoader package by BumpTech: https://github.com/bumptech/glide.
 
-Here is the logo for my app,
+Here is the logo for my app:
+<img src="https://user-images.githubusercontent.com/61807065/115805521-2333c180-a3b3-11eb-9d8f-40b0c39af3a4.png" width="15%"></img> 
+
+An example of Login activity page for Hymn:
+
+
 
 
