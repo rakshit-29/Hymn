@@ -3,17 +3,15 @@ package com.example.hymn.models
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
-/**
- * A data model class for Cart item with required fields.
- */
 @Parcelize
-data class CartItem(
+data class Order(
     val user_id: String = "",
-    val product_id: String = "",
+    val items: ArrayList<CartItem> = ArrayList(),
+    val address: Address = Address(),
     val title: String = "",
-    val price: String = "",
     val image: String = "",
-    var cart_quantity: String = "",
-    var stock_quantity: String = "",
+    val sub_total_amount: String = "",
+    val shipping_charge: String = "",
+    val total_amount: String = "",
     var id: String = ""
 ) : Parcelable
