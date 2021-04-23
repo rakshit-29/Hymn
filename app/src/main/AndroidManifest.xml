@@ -12,6 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hymn">
         <activity
+            android:name=".userinterface.activities.SoldProductDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Hymn.NoActionBar" />
+        <activity
+            android:name=".userinterface.activities.MyOrderDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Hymn.NoActionBar" />
+        <activity
             android:name=".userinterface.activities.CheckoutActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Hymn.NoActionBar" />

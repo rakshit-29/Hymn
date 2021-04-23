@@ -25,6 +25,8 @@ class CheckoutActivity : BaseActivity() {
     private var mSubTotal: Double=0.0
     private var mTotalAmount:Double=0.0
 
+    private lateinit var mOrderDetails: Order
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,10 +57,12 @@ class CheckoutActivity : BaseActivity() {
     }
 
     /**
-     * A function to notify the success result of the order placed.
+     * A function to notify the success result after updating all the required details.
      */
-    fun orderPlacedSuccess() {
+    fun allDetailsUpdatedSuccessfully() {
 
+
+        // Hide the progress dialog.
         hideProgressDialog()
 
         Toast.makeText(this@CheckoutActivity, "Your order placed successfully.", Toast.LENGTH_SHORT)
@@ -68,6 +72,16 @@ class CheckoutActivity : BaseActivity() {
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
         finish()
+
+    }
+
+    /**
+     * A function to notify the success result of the order placed.
+     */
+    fun orderPlacedSuccess() {
+
+       FirestoreClass().updateAllDetails(this, mCartItemsList, mOrderDetails)
+
     }
     /**
      * A function to get the success result of product list.
@@ -101,7 +115,7 @@ class CheckoutActivity : BaseActivity() {
 
 
         if(mAddressDetails!=null){
-            val order = Order(
+            mOrderDetails= Order(
                 FirestoreClass().getCurrentUserID(),
                 mCartItemsList,
                 mAddressDetails!!,
@@ -109,9 +123,10 @@ class CheckoutActivity : BaseActivity() {
                 mCartItemsList[0].image,
                 mSubTotal.toString(),
                 "10.0", // The Shipping Charge is fixed as $10 for now in our case.
-                mTotalAmount.toString()
+                mTotalAmount.toString(),
+                System.currentTimeMillis()
             )
-            FirestoreClass().placeOrder(this@CheckoutActivity, order)
+            FirestoreClass().placeOrder(this@CheckoutActivity, mOrderDetails)
         }
 
 

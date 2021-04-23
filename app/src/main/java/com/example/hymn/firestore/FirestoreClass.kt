@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import com.example.hymn.models.*
 import com.example.hymn.userinterface.activities.*
 import com.example.hymn.userinterface.fragments.DashboardFragment
+import com.example.hymn.userinterface.fragments.OrdersFragment
 import com.example.hymn.userinterface.fragments.ProductFragment
+import com.example.hymn.userinterface.fragments.SoldProductFragment
 import com.example.hymn.utils.Constants
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -756,6 +758,82 @@ class FirestoreClass {
             }
 
     }
+
+    /**
+     * A function to get the list of sold products from the cloud firestore.
+     *
+     *  @param fragment Base class
+     */
+    fun getSoldProductsList(fragment: SoldProductFragment) {
+        // The collection name for SOLD PRODUCTS
+        mFireStore.collection(Constants.SOLD_PRODUCTS)
+            .whereEqualTo(Constants.USER_ID, getCurrentUserID())
+            .get() // Will get the documents snapshots.
+            .addOnSuccessListener { document ->
+                // Here we get the list of sold products in the form of documents.
+                Log.e(fragment.javaClass.simpleName, document.documents.toString())
+
+                // Here we have created a new instance for Sold Products ArrayList.
+                val list: ArrayList<SoldProduct> = ArrayList()
+
+                // A for loop as per the list of documents to convert them into Sold Products ArrayList.
+                for (i in document.documents) {
+
+                    val soldProduct = i.toObject(SoldProduct::class.java)!!
+                    soldProduct.id = i.id
+
+                    list.add(soldProduct)
+                }
+
+
+                fragment.successSoldProductsList(list)
+
+            }
+            .addOnFailureListener { e ->
+                // Hide the progress dialog if there is any error.
+                fragment.hideProgressDialog()
+
+                Log.e(
+                    fragment.javaClass.simpleName,
+                    "Error while getting the list of sold products.",
+                    e
+                )
+            }
+    }
+
+    /**
+     * A function to get the list of orders from cloud firestore.
+     */
+    fun getMyOrdersList(fragment: OrdersFragment) {
+        mFireStore.collection(Constants.ORDERS)
+            .whereEqualTo(Constants.USER_ID, getCurrentUserID())
+            .get() // Will get the documents snapshots.
+            .addOnSuccessListener { document ->
+                Log.e(fragment.javaClass.simpleName, document.documents.toString())
+                val list: ArrayList<Order> = ArrayList()
+
+                for (i in document.documents) {
+
+                    val orderItem = i.toObject(Order::class.java)!!
+                    orderItem.id = i.id
+
+                    list.add(orderItem)
+                }
+
+
+
+
+                fragment.populateOrdersListInUI(list)
+
+            }
+            .addOnFailureListener { e ->
+                // Here call a function of base activity for transferring the result to it.
+
+                fragment.hideProgressDialog()
+
+                Log.e(fragment.javaClass.simpleName, "Error while getting the orders list.", e)
+            }
+    }
     /**
      * A function to place an order of the user in the cloud firestore.
      *
@@ -785,5 +863,60 @@ class FirestoreClass {
                     e
                 )
             }
+    }
+    /**
+     * A function to update all the required details in the cloud firestore after placing the order successfully.
+     *
+     * @param activity Base class.
+     * @param cartList List of cart items.
+     */
+    fun updateAllDetails(activity: CheckoutActivity, cartList: ArrayList<CartItem>,order:Order) {
+
+        val writeBatch = mFireStore.batch()
+
+        // Here we will update the product stock in the products collection based to cart quantity.
+        for (cartItem in cartList) {
+
+
+            val soldProduct=SoldProduct(
+                cartItem.product_owner_id,
+                cartItem.title,
+                cartItem.price,
+                cartItem.cart_quantity,
+                cartItem.image,
+                order.title,
+                order.order_datetime,
+                order.sub_total_amount,
+                order.shipping_charge,
+                order.total_amount,
+                order.address
+            )
+
+            val documentReference = mFireStore.collection(Constants.SOLD_PRODUCTS)
+                .document(cartItem.product_id)
+
+            writeBatch.set(documentReference, soldProduct)
+        }
+
+        // Delete the list of cart items
+        for (cartItem in cartList) {
+
+            val documentReference = mFireStore.collection(Constants.CART_ITEMS)
+                .document(cartItem.id)
+            writeBatch.delete(documentReference)
+        }
+
+        writeBatch.commit().addOnSuccessListener {
+
+
+            activity.allDetailsUpdatedSuccessfully()
+
+
+        }.addOnFailureListener { e ->
+            // Here call a function of base activity for transferring the result to it.
+            activity.hideProgressDialog()
+
+            Log.e(activity.javaClass.simpleName, "Error while updating all the details after order placed.", e)
+        }
     }
 }
