@@ -27,6 +27,7 @@ An example of Login activity page for Hymn:
 
 <img src="https://user-images.githubusercontent.com/61807065/115805854-c7b60380-a3b3-11eb-9bb3-75c605ed8819.JPG" width="15%"></img> 
 
+__Handling some bug issues right now, app is working fine. Just need to update some gradle files and redirect activity intents since it is a very lengthy project and I need atleast a half day's time to update this readme.md file, post gifs and screenshots and push the final code one last time, bug free.__
 
 **AUTHOR**
 Rakshit Saxena, rakshit-29 on GitHub.
