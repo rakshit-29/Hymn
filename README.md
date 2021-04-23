@@ -1,6 +1,7 @@
 **Hymn is an e-commerce music shopping application developed for android platform.**
 
 **Instructions on how to use the application**
+
 The application can be run on android devices with version KitKat and higher.
 
 The database is stored on google cloud firebase firestore, which is a NoSQL online cloud database.
@@ -23,6 +24,12 @@ Here is the logo for my app:
 <img src="https://user-images.githubusercontent.com/61807065/115805521-2333c180-a3b3-11eb-9d8f-40b0c39af3a4.png" width="15%"></img> 
 
 An example of Login activity page for Hymn:
+
+<img src="https://user-images.githubusercontent.com/61807065/115805854-c7b60380-a3b3-11eb-9bb3-75c605ed8819.JPG" width="15%"></img> 
+
+
+**AUTHOR**
+Rakshit Saxena, rakshit-29 on GitHub.
 
 
 
