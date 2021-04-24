@@ -133,6 +133,86 @@ I have added a swipe to edit and swipe to delete utility to my address list recy
 
 As we know this is a real-time cloud database which is stored on my Hymn app firebase and firestore console.
 
+Storage
+
+<img src="https://user-images.githubusercontent.com/61807065/115965693-4caa3580-a4f8-11eb-8eac-0266f50b45ac.JPG" width="15%"></img> 
+
+Addresses collection
+
+<img src="https://user-images.githubusercontent.com/61807065/115965748-972bb200-a4f8-11eb-978e-07fbacdc51aa.JPG" width="15%"></img> 
+
+Users collection
+
+<img src="https://user-images.githubusercontent.com/61807065/115965804-d5c16c80-a4f8-11eb-93d8-8f83ae785a65.JPG" width="15%"></img> 
+
+Sold products collection
+
+<img src="https://user-images.githubusercontent.com/61807065/115965844-ff7a9380-a4f8-11eb-90b8-d1e95ca9f86d.JPG" width="15%"></img> 
+
+Orders collection
+
+<img src="https://user-images.githubusercontent.com/61807065/115966001-9c3d3100-a4f9-11eb-9707-08fe9cad26e0.JPG" width="15%"></img> 
+
+```sh
+address
+  additionalNote: "No contact delivery"
+
+  address: "Bat Cave"
+
+  id: "uNggedSyuJD2JUxneYrs"
+
+  mobileNumber: "9876543210"
+
+  name: "Bruce Wayne"
+
+  otherDetails: ""
+
+  type: "Home"
+
+  user_id: "c0lvmfwuciZodlNEIyg60EWnbjy2"
+
+  zipCode: "123 456"
+
+id: ""
+
+image: "https://firebasestorage.googleapis.com/v0/b/hymn-b94a6.appspot.com/o/Product_Image1619262726132.jpg?alt=media&token=42fadafa-c9af-467b-aef1-d81ccfa74c71"
+
+items
+  0
+    cart_quantity: "2"
+
+    id: "a90BM58qctbbt9605D3P"
+
+    image: "https://firebasestorage.googleapis.com/v0/b/hymn-b94a6.appspot.com/o/Product_Image1619262726132.jpg?alt=media&token=42fadafa-c9af-467b-aef1-d81ccfa74c71"
+
+    price: "249"
+
+    product_id:"Xr88VzN8aFbwctieT1Da"
+
+    product_owner_id:"3zHIB6SkmnXMZOPsGb7m2PDTScR2"
+
+    stock_quantity: "10"
+
+    title: "Freedrum virtual drum kit"
+
+  user_id: "c0lvmfwuciZodlNEIyg60EWnbjy2"
+
+  order_datetime: 1619273460457
+
+  shipping_charge:"10.0"
+
+  sub_total_amount: "498.0"
+
+  title: "My order 1619273460457"
+
+  total_amount"508.0"
+
+  user_id: "c0lvmfwuciZodlNEIyg60EWnbjy2"
+```
+
+Users authentication details
+
+<img src="https://user-images.githubusercontent.com/61807065/115965951-5718ff00-a4f9-11eb-8bd0-a9510c5e65bf.JPG" width="15%"></img> 
 
 
 
