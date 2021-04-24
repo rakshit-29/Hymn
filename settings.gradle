@@ -1,2 +1,9 @@
+/*
+ * *
+ *  Created by Rakshit Saxena
+ *  Copyright (c) 2021 . All rights reserved.
+ * /
+ */
+
 include ':app'
 rootProject.name = "Hymn"

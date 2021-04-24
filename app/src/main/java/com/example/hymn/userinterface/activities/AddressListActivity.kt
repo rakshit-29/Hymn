@@ -1,3 +1,10 @@
+/*
+ * *
+ *  Created by Rakshit Saxena
+ *  Copyright (c) 2021 . All rights reserved.
+ * /
+ */
+
 package com.example.hymn.userinterface.activities
 
 import android.app.Activity

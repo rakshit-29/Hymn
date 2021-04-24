@@ -1,3 +1,10 @@
+<!--
+  ~ /**
+  ~ * Created by Rakshit Saxena
+  ~ * Copyright (c) 2021 . All rights reserved.
+  ~ */
+  -->
+
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.Hymn" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
