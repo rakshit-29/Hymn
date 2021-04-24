@@ -94,8 +94,8 @@ Now as a seller I want to add products.
 <img src="https://user-images.githubusercontent.com/61807065/115963082-3302f100-a4ec-11eb-9b19-6ae1ee39039f.gif" width="15%"></img> 
 
 I have added a swipe to edit and swipe to delete utility to my address list recycler view.
-https://medium.com/@kitek/recyclerview-swipe-to-delete-easier-than-you-thought-cff67ff5e5f6
-https://medium.com/@kitek/recyclerview-swipe-to-delete-easier-than-you-thought-cff67ff5e5f6
+- https://medium.com/@kitek/recyclerview-swipe-to-delete-easier-than-you-thought-cff67ff5e5f6
+- https://medium.com/@kitek/recyclerview-swipe-to-delete-easier-than-you-thought-cff67ff5e5f6
 
 <img src="https://user-images.githubusercontent.com/61807065/115963286-a7d62b00-a4ec-11eb-865c-2bbd162c9e81.gif" width="15%"></img> 
 
