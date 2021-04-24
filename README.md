@@ -63,6 +63,32 @@ The User Interface has 3 main package components:
 - Fragments
 
 An Adapter is a bridge between UI component and data source that helps us to fill data in UI component. It holds the data and send the data to an Adapter view then view can takes the data from the adapter view and shows the data on different views like as ListView, GridView, **RecyclerView**.
+Using adapters for different activities what I do is get user, order, product, address details hashmaps list and create view holders for fragments. Binds items to ArrayList.
+
+Example:
+onViewHolder for MyOrdersListFragment
+```sh
+if (holder is MyViewHolder) {
+
+            GlideLoader(context).loadProductPicture(
+                model.image,
+                holder.itemView.iv_item_image
+            )
+
+            holder.itemView.tv_item_name.text = model.title
+            holder.itemView.tv_item_price.text = "$${model.total_amount}"
+
+            holder.itemView.ib_delete_product.visibility = View.GONE
+
+            holder.itemView.setOnClickListener {
+                //Intent for going to MyOrderDetailsActivity
+                val intent= Intent(context, MyOrderDetailsActivity::class.java)
+                intent.putExtra(Constants.EXTRA_MY_ORDER_DETAILS, model)
+                context.startActivity(intent)
+            }
+        }
+```
+
 
 Login Activity:
 This is the activity where user can login with their information.
