@@ -15,16 +15,25 @@ The application uses Google Firebase Firestore to store a NoSQL database.
 
 ## Configuration
 Glide Loader for easy image loading and uploading: com.github.bumptech.glide:glide:4.11.0
+
 Firebase for Kotin: 'com.google.firebase:firebase-auth-ktx'
+
+```sh
 implementation platform('com.google.firebase:firebase-bom:26.8.0')
 implementation 'com.google.firebase:firebase-analytics-ktx'
 implementation 'com.google.firebase:firebase-firestore-ktx'
 implementation 'com.google.firebase:firebase-storage-ktx'
+```
 Android Version: 4.4 KitKat and higher
+
 buildToolsVersion "30.0.2"
+
 sourceCompatibility JavaVersion.VERSION_1_8
+
 targetCompatibility JavaVersion.VERSION_1_8
+
 dependency'com.google.gms:google-services:4.3.5'
+
 buildscript ext.kotlin_version = "1.3.72"
 
 ## Installation
@@ -44,9 +53,11 @@ My app basically revolves around
 - adapters.
 
 Login activity page for Hymn:
+
 <img src="https://user-images.githubusercontent.com/61807065/115805854-c7b60380-a3b3-11eb-9bb3-75c605ed8819.JPG" width="15%"></img> 
 
-Register activity for new users
+Register activity for new users:
+
 <img src="https://user-images.githubusercontent.com/61807065/115942447-5a1fdb00-a478-11eb-816d-e37bc96b1bba.JPG" width="15%"></img> 
 
 
