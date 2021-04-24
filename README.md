@@ -320,6 +320,8 @@ A new user who wants to
 - Checkout
 - Place Order
 
+**We have used ScrollView for the layout because it is easier to scroll and find the information, some screens are smaller in size, also when someone is filling their information they might have to scroll as their keyboard is displayed on screen**
+
 <img src="https://user-images.githubusercontent.com/61807065/115962313-b3275780-a4e8-11eb-9254-f9765b159104.gif" width="15%"></img> 
 
 As a seller, if I want to see my products and who has placed an order.
