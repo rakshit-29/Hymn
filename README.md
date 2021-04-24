@@ -62,6 +62,8 @@ The User Interface has 3 main package components:
 - Adapters
 - Fragments
 
+An Adapter is a bridge between UI component and data source that helps us to fill data in UI component. It holds the data and send the data to an Adapter view then view can takes the data from the adapter view and shows the data on different views like as ListView, GridView, **RecyclerView**.
+
 Login Activity:
 This is the activity where user can login with their information.
 Has intents to go to forgot password activity, register user activity, dashboard activity.
