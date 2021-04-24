@@ -67,6 +67,13 @@ Forgot Password activity for people who forgot their password, google firebase w
 
 <img src="https://user-images.githubusercontent.com/61807065/115942641-3c9f4100-a479-11eb-8b27-7c8a08fa39bc.JPG" width="15%"></img> 
 
+Dashboard activity
+- Fragments for different activities
+- Has Dashboard, Product, Orders and Sold Products Fragments
+- Menu and Navigation within the app
+
+<img src="https://user-images.githubusercontent.com/61807065/115962033-54151300-a4e7-11eb-91c4-025c9b9afe19.JPG" width="15%"></img> 
+
 
 
 
