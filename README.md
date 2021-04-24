@@ -60,6 +60,10 @@ Register activity for new users:
 
 <img src="https://user-images.githubusercontent.com/61807065/115942447-5a1fdb00-a478-11eb-816d-e37bc96b1bba.JPG" width="15%"></img> 
 
+Forgot Password activity for people who forgot their password, google firebase will send an email to the entered email id for password reset
+
+<img src="https://user-images.githubusercontent.com/61807065/115942641-3c9f4100-a479-11eb-8b27-7c8a08fa39bc.JPG" width="15%"></img> 
+
 
 
 
