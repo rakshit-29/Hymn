@@ -1,14 +1,14 @@
-#Hymn- An app for audiophiles
+# Hymn- An app for audiophiles
 
-##_An E-Commerce music shopping application developed for Android platform_
+## _An E-Commerce music shopping application developed for Android platform_
 
 Hymn is a cloud-enabled, mobile-ready android application which is developed in Kotlin language
 
 The application uses Google Firebase Firestore to store a NoSQL database.
 
--Clean User Interface
--Smooth transitions between activities
--Realtime Database on Google cloud. which can be accessed in real-time!
+- Clean User Interface
+- Smooth transitions between activities
+- Realtime Database on Google cloud. which can be accessed in real-time!
 
 
 The application can be run on android devices with version KitKat and higher.
