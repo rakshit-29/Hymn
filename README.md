@@ -48,6 +48,11 @@ buildscript ext.kotlin_version = "1.3.72"
 > rakshit-29 on GitHub.
 
 ## Manifest
+- <img src="https://user-images.githubusercontent.com/61807065/115963481-7873ee00-a4ed-11eb-8143-e9d929364658.JPG" width="15%"></img> 
+- <img src="https://user-images.githubusercontent.com/61807065/115963531-b8d36c00-a4ed-11eb-95aa-292781a25c1a.JPG" width="15%"></img> 
+
+
+
 
 
 My app basically revolves around 
@@ -95,9 +100,11 @@ Now as a seller I want to add products.
 
 I have added a swipe to edit and swipe to delete utility to my address list recycler view.
 - https://medium.com/@kitek/recyclerview-swipe-to-delete-easier-than-you-thought-cff67ff5e5f6
-- https://medium.com/@kitek/recyclerview-swipe-to-delete-easier-than-you-thought-cff67ff5e5f6
 
 <img src="https://user-images.githubusercontent.com/61807065/115963286-a7d62b00-a4ec-11eb-865c-2bbd162c9e81.gif" width="15%"></img> 
+
+As we know this is a real-time cloud database which is stored on my Hymn app firebase and firestore console.
+
 
 
 
