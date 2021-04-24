@@ -65,8 +65,7 @@ The User Interface has 3 main package components:
 An Adapter is a bridge between UI component and data source that helps us to fill data in UI component. It holds the data and send the data to an Adapter view then view can takes the data from the adapter view and shows the data on different views like as ListView, GridView, **RecyclerView**.
 Using adapters for different activities what I do is get user, order, product, address details hashmaps list and create view holders for fragments. Binds items to ArrayList.
 
-Example:
-onViewHolder for MyOrdersListFragment
+onViewHolder for MyOrdersListAdapter
 ```sh
 if (holder is MyViewHolder) {
 
@@ -81,7 +80,7 @@ if (holder is MyViewHolder) {
             holder.itemView.ib_delete_product.visibility = View.GONE
 
             holder.itemView.setOnClickListener {
-                //Intent for going to MyOrderDetailsActivity
+                //Intent going to MyOrderDetailsActivity
                 val intent= Intent(context, MyOrderDetailsActivity::class.java)
                 intent.putExtra(Constants.EXTRA_MY_ORDER_DETAILS, model)
                 context.startActivity(intent)
@@ -89,21 +88,201 @@ if (holder is MyViewHolder) {
         }
 ```
 
+Sold product fragment function successSoldProductList with (@param ArrayList<SoldProduct>)
+            
+```sh
+fun successSoldProductsList(soldProductsList: ArrayList<SoldProduct>) {
+
+        // Hide Progress dialog.
+        hideProgressDialog()
+
+
+        if (soldProductsList.size > 0) {
+            rv_sold_product_items.visibility = View.VISIBLE
+            tv_no_sold_products_found.visibility = View.GONE
+
+            rv_sold_product_items.layoutManager = LinearLayoutManager(activity)
+            rv_sold_product_items.setHasFixedSize(true)
+
+            val soldProductsListAdapter =
+                SoldProductListAdapter(requireActivity(), soldProductsList)
+            rv_sold_product_items.adapter = soldProductsListAdapter
+        } else {
+            rv_sold_product_items.visibility = View.GONE
+            tv_no_sold_products_found.visibility = View.VISIBLE
+        }
+
+    }
+```
 
 Login Activity:
 This is the activity where user can login with their information.
 Has intents to go to forgot password activity, register user activity, dashboard activity.
 And if it is a new user, it directly goes to Complete Profile first then to the dashboard.
 
+Login registered user
+
+```sh
+private fun logInRegisteredUser(){
+        if(validateLoginDetails()){
+            //Show Progress dialog
+            showProgressDialog(resources.getString(R.string.please_wait))
+
+            //Get the text from editText and trim the spaces
+            val email: String = et_email.text.toString().trim{it <= ' ' }
+            val password: String= et_password.text.toString().trim{it <= ' ' }
+
+            //Log-In using FirebaseAuth
+            FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task->
+
+                    if(task.isSuccessful){
+                        FirestoreClass().getUserDetails(this@LoginActivity)
+
+                    }else {
+                        hideProgressDialog()
+                        showErrorSnackBar(task.exception!!.message.toString(), true)
+                    }
+                }
+        }
+
+    }
+```
+
+
 Register Activity:
 Registers new users and updates the information on our cloud firestore database.
+
+```sh
+private fun registerUser() {
+
+        // Check with validate function if the entries are valid or not.
+        if (validateRegisterDetails()) {
+            //We can pass our own String parameter to the function below to display whatever we want
+            //But for now we are displaying "Please Wait..."
+            showProgressDialog(resources.getString(R.string.please_wait))
+
+            val email: String = et_email.text.toString().trim { it <= ' ' }
+            val password: String = et_password.text.toString().trim { it <= ' ' }
+
+            // Create an instance and create a register a user with email and password.
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(
+                    OnCompleteListener<AuthResult> { task ->
+
+
+                        // If the registration is successfully done
+                        if (task.isSuccessful) {
+
+                            // Firebase registered user
+                            val firebaseUser: FirebaseUser = task.result!!.user!!
+                            val user = User(
+                                    firebaseUser.uid,
+                                    et_first_name.text.toString().trim { it <= ' ' },
+                                    et_last_name.text.toString().trim { it <= ' ' },
+                                    et_email.text.toString().trim { it <= ' ' }
+                            )
+
+                            FirestoreClass().registerUser(this@RegisterActivity, user)
+
+                            //Sign out from the register then go back to the login activity
+                            //FirebaseAuth.getInstance().signOut()
+                            //finish()
+                        } else {
+                            hideProgressDialog()
+                            // If the registering is not successful then show error message.
+                            showErrorSnackBar(task.exception!!.message.toString(), true)
+                        }
+                    })
+        }
+    }
+```
+
 
 
 I have a firestore class for the whole interaction with my firebase console.
 
+Uploading image to cloud storage
+```sh
+   fun uploadImageToCloudStorage(activity: Activity, imageFileURI: Uri?, imageType:String) {
+
+        //getting the storage reference
+        val sRef: StorageReference = FirebaseStorage.getInstance().reference.child(
+            imageType + System.currentTimeMillis() + "."
+                    + Constants.getFileExtension(
+                activity,
+                imageFileURI
+            )
+        )
+
+        //adding the file to reference
+        sRef.putFile(imageFileURI!!)
+            .addOnSuccessListener { taskSnapshot ->
+                // The image upload is success
+                Log.e(
+                    "Firebase Image URL",
+                    taskSnapshot.metadata!!.reference!!.downloadUrl.toString()
+                )
+
+                // Get the downloadable url from the task snapshot
+                taskSnapshot.metadata!!.reference!!.downloadUrl
+                    .addOnSuccessListener { uri ->
+                        Log.e("Downloadable Image URL", uri.toString())
+                        when(activity){
+                            is UserProfileActivity ->{
+                                activity.imageUploadSuccess(uri.toString())
+                            }
+                            is AddProductActivity->{
+                                activity.imageUploadSuccess(uri.toString())
+
+                            }
+                        }
+                    }
+            }
+            .addOnFailureListener { exception->
+                // Here call a function of base activity for transferring the result to it.
+                when (activity) {
+                    is UserProfileActivity -> {
+                        activity.hideProgressDialog()
+                    }
+
+                    is AddProductActivity->{
+                        activity.hideProgressDialog()
+                    }
+                }
+                Log.e(
+                    activity.javaClass.simpleName,
+                    exception.message,
+                    exception
+
+                )
+
+            }
+
+
+    }
+```
+
 My utils are the utilities used throught my app.
 
-My HymnTextView, HymnRadioButton, HymnEditText, HymnTexViewBold, HymnButton are the attributes with my own defined fonts that I have used, of different AppCompats for laying out the in the whole application.
+My HymnTextView, HymnRadioButton, HymnEditText, HymnTextViewBold, HymnButton are the attributes with my own defined fonts that I have used, of different AppCompats for laying out the in the whole application.
+
+HymnTextViewBold
+```sh
+class HymnTextViewBold(context: Context, attrs:AttributeSet): AppCompatTextView(context, attrs){
+    init {
+        //Call the function to apply the font to the components
+        applyFont()
+    }
+    private fun applyFont(){
+        //This is used to get the file from the assets folder and set it to the title textView
+        val typeface: Typeface =
+            Typeface.createFromAsset(context.assets, "Montserrat-Bold.ttf")
+            setTypeface(typeface)
+
+    }
+}
+```
 
 Constants object file is for defining the collection in firestore.
 
