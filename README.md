@@ -286,6 +286,30 @@ class HymnTextViewBold(context: Context, attrs:AttributeSet): AppCompatTextView(
 
 Constants object file is for defining the collection in firestore.
 
+How I want my Buttons, EditText, TextView to look.
+```sh
+<!--PLACE ORDER BUTTON, I HAVE USED MY OWN BUTTON UTILITY WITH DEFINED FONT-->
+<com.example.hymn.utils.HymnButton
+            android:id="@+id/btn_place_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/button_background"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:paddingTop="@dimen/btn_padding"
+            android:paddingBottom="@dimen/btn_padding"
+            android:text="@string/btn_lbl_place_order"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/btn_textSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_terms_and_condition" />
+```
+
 ## Execution GIFS and Project Screenshots
 
 My app basically revolves around 
