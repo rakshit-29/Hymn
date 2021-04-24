@@ -2,13 +2,13 @@
 
 ## _An E-Commerce music shopping application developed for Android platform_
 
-Hymn is a cloud-enabled, mobile-ready android application which is developed in Kotlin language
+### Hymn is a cloud-enabled, mobile-ready android application which is developed in Kotlin language
 
 The application uses Google Firebase Firestore to store a NoSQL database.
 
 - Clean User Interface
 - Smooth transitions between activities
-- Realtime Database on Google cloud. which can be accessed in real-time!
+- Realtime Database on Google cloud, which can be accessed in real-time!
 
 ## Logo
 <img src="https://user-images.githubusercontent.com/61807065/115805521-2333c180-a3b3-11eb-9d8f-40b0c39af3a4.png" width="15%"></img> 
@@ -45,15 +45,41 @@ buildscript ext.kotlin_version = "1.3.72"
 > Created by Rakshit Saxena
 > Copyright (c) 2021 . All rights reserved.
 > Rakshit Saxena.
-> rakshit-29 on GitHub.
+
+## Contact Information
+> rakshit-29 on GitHub: https://github.com/rakshit-29
+> Email: rakshit290900@gmail.com
+> LinkedIn: https://www.linkedin.com/in/rakshit-saxena-5122a11a6/
 
 ## Manifest
 - <img src="https://user-images.githubusercontent.com/61807065/115963481-7873ee00-a4ed-11eb-8143-e9d929364658.JPG" width="15%"></img> 
 - <img src="https://user-images.githubusercontent.com/61807065/115963531-b8d36c00-a4ed-11eb-95aa-292781a25c1a.JPG" width="15%"></img> 
 
+My models are data classes for all the Product Details, User Details, Cart, Sold product details, Addresses.
+
+The User Interface has 3 main package components:
+- Activities
+- Adapters
+- Fragments
+
+Login Activity:
+This is the activity where user can login with their information.
+Has intents to go to forgot password activity, register user activity, dashboard activity.
+And if it is a new user, it directly goes to Complete Profile first then to the dashboard.
+
+Register Activity:
+Registers new users and updates the information on our cloud firestore database.
 
 
+I have a firestore class for the whole interaction with my firebase console.
 
+My utils are the utilities used throught my app.
+
+My HymnTextView, HymnRadioButton, HymnEditText, HymnTexViewBold, HymnButton are the attributes with my own defined fonts that I have used, of different AppCompats for laying out the in the whole application.
+
+Constants object file is for defining the collection in firestore.
+
+## Execution GIFS and Project Screenshots
 
 My app basically revolves around 
 - fragments
