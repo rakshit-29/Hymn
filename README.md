@@ -84,6 +84,22 @@ A new user who wants to
 
 <img src="https://user-images.githubusercontent.com/61807065/115962313-b3275780-a4e8-11eb-9254-f9765b159104.gif" width="15%"></img> 
 
+As a seller, if I want to see my products and who has placed an order.
+- Sold products 
+
+<img src="https://user-images.githubusercontent.com/61807065/115962852-4792b980-a4eb-11eb-9312-55b18e38760f.gif" width="15%"></img> 
+
+Now as a seller I want to add products.
+
+<img src="https://user-images.githubusercontent.com/61807065/115963082-3302f100-a4ec-11eb-9b19-6ae1ee39039f.gif" width="15%"></img> 
+
+I have added a swipe to edit and swipe to delete utility to my address list recycler view.
+https://medium.com/@kitek/recyclerview-swipe-to-delete-easier-than-you-thought-cff67ff5e5f6
+https://medium.com/@kitek/recyclerview-swipe-to-delete-easier-than-you-thought-cff67ff5e5f6
+
+<img src="https://user-images.githubusercontent.com/61807065/115963286-a7d62b00-a4ec-11eb-865c-2bbd162c9e81.gif" width="15%"></img> 
+
+
 
 
 
