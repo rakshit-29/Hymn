@@ -47,6 +47,9 @@ buildscript ext.kotlin_version = "1.3.72"
 > Rakshit Saxena.
 > rakshit-29 on GitHub.
 
+## Manifest
+
+
 My app basically revolves around 
 - fragments
 - activities
