@@ -74,6 +74,16 @@ Dashboard activity
 
 <img src="https://user-images.githubusercontent.com/61807065/115962033-54151300-a4e7-11eb-91c4-025c9b9afe19.JPG" width="15%"></img> 
 
+A new user who wants to
+- Register
+- Login
+- Add products to cart
+- Add address
+- Checkout
+- Place Order
+
+<img src="https://user-images.githubusercontent.com/61807065/115962313-b3275780-a4e8-11eb-9254-f9765b159104.gif" width="15%"></img> 
+
 
 
 
