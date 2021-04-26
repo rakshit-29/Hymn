@@ -41,6 +41,23 @@ buildscript ext.kotlin_version = "1.3.72"
 - On Android Studio you can directly run the app in your AVD or android phone which will basically install .apk on your device.
 - Sync gradle files
 
+## Troubleshooting tips
+- Depracate your Android version to 4.0.2 and Gradle version to 6.4 if there is an error in compiling.
+- Go to **File**->**Project Structure**->Change android version to **4.0.2** and gradle version to **6.4**.
+- You might want to be connected to internet while running the application.
+- Delete all caches and restart the project.
+
+## Features
+- Swipe to delete and edit.
+- Orders processed with given time.
+- Press the back button twice (within 2 seconds) to exit the application.
+- Image loading with GlideLoader
+- Extremely rich and pleasant UI/UX with ambient display.
+- Drawable resources are very modern and unique.
+- Action bar in almost every layout which functions as a back button.
+- Theme kept without action bar to make it look beautiful.
+- Save all data to cloud storage.
+
 ## Copyright
 > Created by Rakshit Saxena
 > Copyright (c) 2021 . All rights reserved.
@@ -444,9 +461,6 @@ items
 Users authentication details
 
 <img src="https://user-images.githubusercontent.com/61807065/115965951-5718ff00-a4f9-11eb-8bd0-a9510c5e65bf.JPG" width="15%"></img> 
-
-
-
 
 
 
